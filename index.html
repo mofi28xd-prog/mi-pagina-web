@@ -1,16 +1,103 @@
-html<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Página Web</title>
-</head>
-<body>
-    <header>
-        <h1>¡Bienvenido a mi sitio web SEBASTIAN CASTILLO!</h1>
-    </header>
+        width: 100%;
+        margin-top: 6px;
+        padding: 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 22px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      .oculto {
+        display: none;
+      }
+
+      .fortnite {
+        margin-top: 18px;
+        padding: 16px;
+        background: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fila 21: <h1> crea el encabezado principal visible en la pagina. -->
+    <h1>Hola, mundo</h1>
+    <!-- Fila 23: <p> agrega un parrafo; su efecto es mostrar texto normal debajo del titulo. -->
+    <p>Esta es mi primera pagina web.</p>
     <main>
-        <p>Este es el contenido principal de tu archivo index.</p>
+      <h1>Agenda tu cita sobre derecho</h1>
+      <p>Completa el formulario para elegir el tipo de cita, la rama legal y la hora disponible.</p>
+
+      <form>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+
+        <label for="tipo-cita">Tipo de cita</label>
+        <select id="tipo-cita" name="tipo-cita">
+          <option value="legal">Cita legal</option>
+          <option value="otro">Otro tipo de cita</option>
+        </select>
+
+        <label for="rama">Rama del derecho</label>
+        <select id="rama" name="rama">
+          <option value="ambiental">Ambiental</option>
+          <option value="penal">Penal</option>
+          <option value="administrativo">Administrativo</option>
+        </select>
+
+        <label for="hora">Hora de la cita</label>
+        <select id="hora" name="hora">
+          <option>10:00 AM</option>
+          <option>11:00 AM</option>
+          <option>12:00 PM</option>
+          <option>1:00 PM</option>
+          <option>2:00 PM</option>
+          <option>3:00 PM</option>
+          <option>4:00 PM</option>
+          <option>5:00 PM</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+        </select>
+
+        <label for="mensaje">Mensaje adicional</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe algun detalle de tu consulta"></textarea>
+
+        <div id="opciones-fortnite" class="fortnite oculto">
+          <h2>Opciones para jugar Fortnite</h2>
+          <p>Podemos jugar duo, trio, squad o creativo.</p>
+          <p><strong>Este es mi ID agregame! : mOfi</strong></p>
+        </div>
+
+        <button type="submit">Agendar cita</button>
+      </form>
     </main>
-</body>
+
+    <script>
+      const tipoCita = document.getElementById("tipo-cita");
+      const opcionesFortnite = document.getElementById("opciones-fortnite");
+
+      tipoCita.addEventListener("change", function () {
+        if (tipoCita.value === "otro") {
+          opcionesFortnite.classList.remove("oculto");
+        } else {
+          opcionesFortnite.classList.add("oculto");
+        }
+      });
+    </script>
+  </body>
 </html>
